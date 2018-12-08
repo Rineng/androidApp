@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.example.rhuang.androidapp.R;
 
-public abstract class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyViewHolder> {
+public class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyViewHolder> {
     private String[] mDataset;
 
     // Provide a reference to the views for each data item

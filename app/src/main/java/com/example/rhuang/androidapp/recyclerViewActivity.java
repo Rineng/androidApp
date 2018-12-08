@@ -5,8 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity {
-
+public class recyclerViewActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -22,5 +21,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayout);
 
         mAdapter = new recyclerAdaptor(mDataSet);
+
     }
 }
