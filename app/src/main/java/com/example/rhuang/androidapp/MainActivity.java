@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayout;
-    private String[] mDataSet = new String[]{"hello", "world"};
+    private String[] mDataSet = new String[]{"APPLES", "Oranges", "Grapes"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +22,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayout);
 
         mAdapter = new recyclerAdaptor(mDataSet);
+        recyclerView.setAdapter(mAdapter);
     }
 }

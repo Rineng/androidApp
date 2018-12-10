@@ -21,6 +21,7 @@ public class recyclerViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayout);
 
         mAdapter = new recyclerAdaptor(mDataSet);
+        recyclerView.setAdapter(mAdapter);
 
     }
 }

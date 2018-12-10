@@ -2,10 +2,14 @@ package com.example.rhuang.androidapp;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.rhuang.androidapp.R;
+
+import org.w3c.dom.Text;
 
 public class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyViewHolder> {
     private String[] mDataset;
@@ -16,9 +20,10 @@ public class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyView
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView mTextView;
-        public MyViewHolder(TextView v) {
+        public MyViewHolder(View v) {
             super(v);
-            mTextView = v;
+//            mTextView = v;
+            mTextView = v.findViewById(R.id.row);
         }
     }
 
@@ -29,11 +34,10 @@ public class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyView
 
     // Create new views (invoked by the layout manager)
     @Override
-    public recyclerAdaptor.MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                                     int viewType) {
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
-        TextView v = (TextView) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recycler_view, parent, false);
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.recycler_row, parent, false);
         MyViewHolder vh = new MyViewHolder(v);
         return vh;
     }
