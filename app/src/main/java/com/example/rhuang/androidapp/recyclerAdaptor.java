@@ -40,6 +40,7 @@ public class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyView
                 .inflate(R.layout.recycler_row, parent, false);
         MyViewHolder vh = new MyViewHolder(v);
         return vh;
+
     }
 
     // Replace the contents of a view (invoked by the layout manager)
