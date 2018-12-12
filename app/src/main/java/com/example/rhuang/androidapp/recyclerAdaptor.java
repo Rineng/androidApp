@@ -22,8 +22,7 @@ public class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyView
         public TextView mTextView;
         public MyViewHolder(View v) {
             super(v);
-//            mTextView = v;
-            mTextView = v.findViewById(R.id.row);
+            mTextView = v.findViewById(R.id.ticketType);
         }
     }
 
@@ -37,7 +36,7 @@ public class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyView
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recycler_row, parent, false);
+                .inflate(R.layout.recycler_cardview, parent, false);
         MyViewHolder vh = new MyViewHolder(v);
         return vh;
 
