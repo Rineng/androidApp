@@ -1,43 +1,42 @@
-package com.example.rhuang.androidapp;
+package com.example.rhuang.androidapp.resultListings;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.rhuang.androidapp.R;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
 
-public class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyViewHolder> {
-    private String[] mDataset;
+public class resultsAdaptor extends RecyclerView.Adapter<resultsAdaptor.MyViewHolder> {
+    private ArrayList<String> mDataset;
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
-        public TextView mTextView;
+        public TextView textView;
         public MyViewHolder(View v) {
             super(v);
-            mTextView = v.findViewById(R.id.ticketType);
+            textView = v.findViewById(R.id.results);
         }
+
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public recyclerAdaptor(String[] myDataset) {
+    public resultsAdaptor(ArrayList<String> myDataset) {
         mDataset = myDataset;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recycler_cardview, parent, false);
-        MyViewHolder vh = new MyViewHolder(v);
+                .inflate(R.layout.ticket_listings, parent, false);
+        final MyViewHolder vh = new MyViewHolder(v);
+//        vh.textView.setOnClickListener(new View.OnClickListener(){
+////            @Override
+////            public void onClick(View view){
+////                System.out.println("Position clicked is: " + vh.getAdapterPosition());
+////            }
+////        });
         return vh;
 
     }
@@ -47,13 +46,13 @@ public class recyclerAdaptor extends RecyclerView.Adapter<recyclerAdaptor.MyView
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mTextView.setText(mDataset[position]);
-
+//        Drawable myDrawable = getResources().getDrawable(R.drawable.ic_launcher_background);
+        holder.textView.setText(mDataset.get(position));
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
     }
 }
