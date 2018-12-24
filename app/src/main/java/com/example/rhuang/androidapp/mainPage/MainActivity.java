@@ -9,6 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import com.example.rhuang.androidapp.R;
 import com.example.rhuang.androidapp.resultListings.listingsActivity;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -27,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, listingsActivity.class);
         mAdapter = new recyclerAdaptor(mDataSet, intent, this);
         recyclerView.setAdapter(mAdapter);
+
+        Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("https:www.invaluable.com")
+                .addConverterFactory(GsonConverterFactory.create());
+        Retrofit retrofit = builder.build();
+
+
     }
 
 //    public void clickButton(View view) {

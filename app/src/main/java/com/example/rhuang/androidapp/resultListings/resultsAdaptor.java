@@ -31,12 +31,6 @@ public class resultsAdaptor extends RecyclerView.Adapter<resultsAdaptor.MyViewHo
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.ticket_listings, parent, false);
         final MyViewHolder vh = new MyViewHolder(v);
-//        vh.textView.setOnClickListener(new View.OnClickListener(){
-////            @Override
-////            public void onClick(View view){
-////                System.out.println("Position clicked is: " + vh.getAdapterPosition());
-////            }
-////        });
         return vh;
 
     }
